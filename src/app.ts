@@ -26,6 +26,4 @@ function main() {
   app.listen( envs.PORT, () => {
     console.log(`App running on port ${ envs.PORT }`);
   })
-
-
 }

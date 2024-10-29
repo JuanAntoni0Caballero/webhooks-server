@@ -1,14 +1,12 @@
 import { GitHubIssuePayload, GitHubStarPayload } from '../../interfaces';
 
 
-
 export class GitHubService {
 
   constructor() { }
 
 
   onStar( payload: GitHubStarPayload ): string {
-
 
     const { action, sender, repository } = payload;
 
@@ -32,13 +30,6 @@ export class GitHubService {
       return `An issue was reopened by ${ issue.user.login }`;
     }
 
-
     return `Unhandled action for the issue event ${ action }`;
-
-
   }
-
-
-
-
 }

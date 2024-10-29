@@ -1,14 +1,11 @@
 import { envs } from '../../config';
 
 
-
-
 export class DiscordService {
 
   private readonly discordWebhookUrl = envs.DISCORD_WEBHOOK_URL;
 
   constructor() {}
-
 
   async notify( message: string ) {
 
@@ -31,10 +28,6 @@ export class DiscordService {
       console.log('Error sending message to discord');
       return false;
     }
-
     return true;
   }
-
-
-
 }

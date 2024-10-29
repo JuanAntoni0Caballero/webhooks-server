@@ -3,15 +3,12 @@ import { GitHubService } from '../services/github.service';
 import { DiscordService } from '../services/discord.service';
 
 
-
 export class GithubController {
-
 
   constructor(
     private readonly githubService = new GitHubService(),
     private readonly discordService = new DiscordService(),
   ){}
-
 
   webhookHandler = ( req: Request, res: Response ) => {
 
@@ -40,8 +37,4 @@ export class GithubController {
       .catch( () => res.status(500).json({ error: 'internal server error'}) )
 
   }
-
-
-
 }
-

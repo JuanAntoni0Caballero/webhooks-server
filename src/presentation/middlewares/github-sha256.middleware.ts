@@ -1,5 +1,4 @@
 import * as crypto from "crypto";
-
 import { NextFunction, Request, Response } from 'express';
 import { envs } from '../../config';
 
@@ -26,16 +25,12 @@ const verify_signature = (req: Request) => {
 
 export class GithubSha256Middleware {
 
-
   static verifySignature = ( req: Request, res: Response, next: NextFunction ) => {
 
     if (!verify_signature(req)) {
       res.status(401).send("Unauthorized");
       return;
     }
-
     next();
   }
-
-
 }
